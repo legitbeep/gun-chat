@@ -1,5 +1,5 @@
 <script>
-  import { usename, user, username } from "./auth";
+  import { curUser, username } from "./auth";
 
   const signout = () => {
     user.leave(); // gun js stuff

@@ -15,11 +15,11 @@ export const curUser = db.user().recall({ sessionStorage: true });
 export const username = writable("");
 
 // update username throughout the store
-user.get("alias").on((newName) => username.set(newName));
+curUser.get("alias").on((newName) => username.set(newName));
 
 // handle auth state
 db.on("auth", async (e) => {
-  const newName = await user.get("alias");
+  const newName = await curUser.get("alias");
   // update user
   username.set(newName);
 });
